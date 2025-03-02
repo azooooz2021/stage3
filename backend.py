@@ -24,6 +24,10 @@ model = "gpt-3.5-turbo"
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello World"}
+
 # Request models
 class ChatRequest(BaseModel):
     messages: List[dict]
